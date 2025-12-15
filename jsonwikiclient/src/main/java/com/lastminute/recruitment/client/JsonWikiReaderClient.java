@@ -9,13 +9,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class JsonWikiClientClient implements WikiReaderClient {
+public class JsonWikiReaderClient implements WikiReaderClient {
     private static final String BASE_PATH = "wikiscrapper";
 
     private final ObjectMapper objectMapper;
     private final ClassLoader classLoader = this.getClass().getClassLoader();
 
-    public JsonWikiClientClient(ObjectMapper objectMapper) {
+    public JsonWikiReaderClient(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
     }
 

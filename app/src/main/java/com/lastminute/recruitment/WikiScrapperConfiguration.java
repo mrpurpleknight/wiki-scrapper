@@ -1,8 +1,8 @@
 package com.lastminute.recruitment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lastminute.recruitment.client.HtmlWikiClientClient;
-import com.lastminute.recruitment.client.JsonWikiClientClient;
+import com.lastminute.recruitment.client.HtmlWikiReaderClient;
+import com.lastminute.recruitment.client.JsonWikiReaderClient;
 import com.lastminute.recruitment.domain.client.WikiReaderClient;
 import com.lastminute.recruitment.domain.repository.WikiPageRepository;
 import com.lastminute.recruitment.domain.WikiScrapper;
@@ -27,14 +27,14 @@ public class WikiScrapperConfiguration {
     @Profile("json")
     @Qualifier("baseClient")
     public WikiReaderClient jsonWikiReader(ObjectMapper objectMapper) {
-        return new JsonWikiClientClient(objectMapper);
+        return new JsonWikiReaderClient(objectMapper);
     }
 
     @Bean
     @Profile("html")
     @Qualifier("baseClient")
     public WikiReaderClient htmlWikiReader() {
-        return new HtmlWikiClientClient();
+        return new HtmlWikiReaderClient();
     }
 
     @Bean

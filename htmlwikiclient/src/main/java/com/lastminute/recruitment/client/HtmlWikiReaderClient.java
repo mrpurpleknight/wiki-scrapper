@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class HtmlWikiClientClient implements WikiReaderClient {
+public class HtmlWikiReaderClient implements WikiReaderClient {
     private static final String DOMAIN = "http://wikiscrapper.test";
     private static final String BASE_PATH = "wikiscrapper";
 
